@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Code Editor with Suggestions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CodeMirror Core and Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css"
+    />
+
+    <!-- CodeMirror JS -->
+    <!-- Initializes and enables the CodeMirror editor functionality in the browser (i.e., turns a <textarea> into a code editor) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+
+    <!-- Enables syntax highlighting and parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+
+    <!-- using autocomplete/hinting and suggetions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/xml-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/css-hint.min.js"></script>
+
+    <!-- using resizable panes/layouts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js " defer></script>
+  </head>
+  <body>
+    <header><h1>HTML/CSS/JS Code Editor</h1></header>
+
+    <div class="controls">
+      <button onclick="saveToLocal()">💾 Save</button>
+      <button onclick="loadFromLocal()">📂 Load</button>
+      <button onclick="resetEditors()">♻ Reset</button>
+      <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+      <button onclick="downloadCode()">⬇ Download Code</button>
+    </div>
+
+    <div id="split" class="editors">
+      <div class="editor" id="html-pane">
+        <div class="editor-title">HTML</div>
+        <textarea id="html-editor"></textarea>
+      </div>
+      <div class="editor" id="css-pane">
+        <div class="editor-title">CSS</div>
+        <textarea id="css-editor"></textarea>
+      </div>
+      <div class="editor" id="js-pane">
+        <div class="editor-title">JavaScript</div>
+        <textarea id="js-editor"></textarea>
+      </div>
+      <div class="editor" id="preview-pane">
+        <div class="editor-title">Live Preview</div>
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+:root {
+  --bg: #1e1e1e;
+  --fg: #ffffff;
+  --editor-bg: #252526;
+  --title-bg: #444;
+  --iframe-bg: #fff;
+}
+
+body.light {
+  --bg: #f4f4f4;
+  --fg: #000;
+  --editor-bg: #ffffff;
+  --title-bg: #ccc;
+  --iframe-bg: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  background: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.editors {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-title {
+  background-color: var(--title-bg);
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.CodeMirror {
+  flex: 1;
+  font-size: 14px;
+  height: 100%;
+  background-color: var(--editor-bg);
+  color: var(--fg);
+}
+
+iframe {
+  flex: 1;
+  background-color: var(--iframe-bg);
+  border: none;
+}
+
+.controls {
+  background: #222;
+  padding: 5px;
+  text-align: center;
+}
+
+button {
+  padding: 6px 10px;
+  background: #555;
+  color: white;
+  border: none;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #777;
+}
+
+.gutter {
+  background-color: #333;
+  cursor: col-resize;
+  width: 8px;
+}
